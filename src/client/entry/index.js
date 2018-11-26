@@ -4,12 +4,12 @@ import React from 'react';
 import { hydrate } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { preloadReady } from 'react-loadable';
-import { hot } from 'react-hot-loader';
+//import { hot } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import configureStore from 'universal/services';
-import renderRoutes from 'react-router-config/renderRoutes';
-import RouteOptions from 'universal/routes';
-import {convertCustomRouteConfig} from 'universal/utils/convertcustomRouteConfig';
+import { renderRoutes } from 'react-router-config';
+import RouteOptions from 'universal/web/routes';
+import { convertCustomRouteConfig } from 'universal/utils/convertcustomRouteConfig';
 
 const routeConfig = convertCustomRouteConfig(RouteOptions);
 
@@ -64,7 +64,7 @@ export const clientSideRender = async (
 
     if (module.hot) {
       module.hot.accept(() => {
-        const RouteOptions = require('universal/routes');
+        const RouteOptions = require('universal/web/routes');
         const routeConfig = convertCustomRouteConfig(RouteOptions);
         const nextAppRoutes = (routeConfig.default || routeConfig);
         renderApp(nextAppRoutes);

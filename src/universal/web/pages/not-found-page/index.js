@@ -1,8 +1,8 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
-import renderRoutes from 'react-router-config/renderRoutes';
+import { renderRoutes } from 'react-router-config';
 
-const App = ({route}) => {
+const App = ({ route }) => {
   return <Fragment>{renderRoutes(route.routes)}</Fragment>;
 };
 

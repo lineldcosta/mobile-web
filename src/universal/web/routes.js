@@ -7,18 +7,18 @@ export default [
   {
     path: '/',
     component: Layout,
-    exact : false,
+    exact: false,
     routes: [
-  		{ 
-  			path: '/', 
-  			exact: true, 
-  			component: IndexPage 
-  		},
-    	{ 
-    		path: '/not-found/', 
-    		component: NotFoundIndex, 
-    		exact : false,
-    		routes: NotFoundRoutes
+      {
+        path: '/',
+        exact: true,
+        component: IndexPage,
+      },
+      {
+        path: '/not-found/',
+        component: NotFoundIndex,
+        exact: false,
+        routes: NotFoundRoutes,
       },
     ],
   },

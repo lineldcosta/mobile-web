@@ -7,11 +7,11 @@ import { Provider } from 'react-redux';
 import configureStore from 'universal/services';
 import { ServerStyleSheet } from 'styled-components';
 //import fetchDataForRender from '../helpers/fetchDataForRender';
-import RouteOptions from 'universal/routes';
-import renderRoutes from 'react-router-config/renderRoutes';
+import RouteOptions from 'universal/web/routes';
+import { renderRoutes } from 'react-router-config';
 import matchRoutes from 'react-router-config/matchRoutes';
+import { convertCustomRouteConfig } from 'universal/utils/convertcustomRouteConfig';
 import waitAll from '../helpers/waitAll';
-import {convertCustomRouteConfig} from 'universal/utils/convertcustomRouteConfig';
 
 const routeConfig = convertCustomRouteConfig(RouteOptions);
 const preloadedState = {};
@@ -29,7 +29,7 @@ const serverSideRender = (stats) => async (req, res) => {
     .reduce((result, preLoader) => result.concat(preLoader), []);
 
   const runTasks = store.runSaga(waitAll(preLoaders));
-  
+
   runTasks.done.then(() => {
     const { clientStats, reactLoadableStats } = stats;
     const context = {};
