@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-import { getPageTitle } from './../../services/web/actionSaga';
-import { getPageTitleAction } from './../../services/web/actionCreator';
-import LoadingPage from 'universal/web/loading-page';
+import { getPageTitle } from './../../../services/page/actionSaga';
+import { getPageTitleAction } from './../../../services/page/actionCreator';
+import LoadingPage from 'universal/web/pages/loading-page';
 
 
 class NotFound extends Component {

@@ -1,7 +1,7 @@
 /*global __DEV__*/
 
 import { fork, cancel, take, all } from 'redux-saga/effects';
-import { getPageTitleFlow } from './web/actionSaga';
+import { getPageTitleFlow } from './page/actionSaga';
 
 const CANCEL_SAGAS_HMR = '@@saga/cancel-sagas-hmr';
 

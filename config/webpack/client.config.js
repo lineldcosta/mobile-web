@@ -141,6 +141,9 @@ module.exports = (env) => {
     },
     resolve: {
       modules: [resolvePath('../../src'), 'node_modules'],
+      alias: {
+        universal: resolvePath('../../src/universal/'),
+      },
     },
     mode: NODE_ENV,
     target: 'web',
