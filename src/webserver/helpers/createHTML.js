@@ -1,6 +1,6 @@
 /*eslint no-console: ["error", { allow: ["warn", "log", "error", "info"] }] */
 import { getBundles } from 'react-loadable/webpack';
-import faviconUrl from 'server/components/html/images/favicon.ico';
+import faviconUrl from 'webserver/components/html/images/favicon.ico';
 
 const createHTML = ({ clientStats, reactLoadableStats, state, modules }) => {
   try {

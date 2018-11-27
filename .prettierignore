@@ -1,5 +1,5 @@
 node_modules
 coverage
-client
-server/development
-server/production
+webclient
+webserver/development
+webserver/production

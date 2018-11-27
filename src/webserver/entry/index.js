@@ -2,7 +2,7 @@ import React from 'react';
 import { renderToNodeStream } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { preloadAll } from 'react-loadable';
-import Html from 'server/html';
+import Html from 'webserver/html';
 import { Provider } from 'react-redux';
 import configureStore from 'application/services';
 import { ServerStyleSheet } from 'styled-components';

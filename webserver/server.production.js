@@ -7,7 +7,7 @@ if (!process.env.SERVER_PORT) process.env.SERVER_PORT = 3000;
 const express = require('express');
 const cluster = require('cluster');
 const shrinkRay = require('shrink-ray');
-const reactLoadableStats = require('../client/production/react.loadable.production.stats.webpack.json');
+const reactLoadableStats = require('../webclient/production/react.loadable.production.stats.webpack.json');
 const webpackClientConfig = require('../config/webpack/client.config')({
   prod: true,
 });

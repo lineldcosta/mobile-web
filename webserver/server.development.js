@@ -10,7 +10,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpackHotServerMiddleware = require('webpack-hot-server-middleware');
 
-const reactLoadableStats = require('../client/development/react.loadable.development.stats.webpack.json');
+const reactLoadableStats = require('../webclient/development/react.loadable.development.stats.webpack.json');
 const webpackClientConfig = require('../config/webpack/client.config')({
   dev: true,
 });

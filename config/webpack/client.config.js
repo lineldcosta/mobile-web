@@ -25,7 +25,7 @@ module.exports = (env) => {
           'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=false&quiet=false&noInfo=false',
         ),
         ...ifDev('webpack/hot/dev-server'),
-        resolvePath('../../src/client/entry/index.js'),
+        resolvePath('../../src/webclient/entry/index.js'),
       ],
     },
     module: {
@@ -97,7 +97,7 @@ module.exports = (env) => {
     output: {
       filename: env.dev ? '[name].js' : '[name].[chunkhash].js',
       chunkFilename: env.dev ? '[name].js' : '[name].[chunkhash].js',
-      path: resolvePath(`../../client/${NODE_ENV}`),
+      path: resolvePath(`../../webclient/${NODE_ENV}`),
       publicPath: '/dist/',
     },
     plugins: [
@@ -110,7 +110,7 @@ module.exports = (env) => {
         __DEV__: !!env.dev,
       }),
       new ReactLoadablePlugin({
-        filename: `./client/${NODE_ENV}/react.loadable.${NODE_ENV}.stats.webpack.json`,
+        filename: `./webclient/${NODE_ENV}/react.loadable.${NODE_ENV}.stats.webpack.json`,
       }),
       new MiniCssExtractPlugin({
         filename: '[name].[contenthash].css',

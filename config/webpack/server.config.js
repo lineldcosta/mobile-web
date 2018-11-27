@@ -13,7 +13,7 @@ module.exports = (env) => {
 
   return {
     devtool: env.dev ? 'eval' : 'source-map',
-    entry: [resolvePath('../../src/server/entry/index.js')],
+    entry: [resolvePath('../../src/webserver/entry/index.js')],
     module: {
       rules: [
         {
@@ -79,7 +79,7 @@ module.exports = (env) => {
     output: {
       filename: 'serverSideRender.js',
       libraryTarget: 'commonjs2',
-      path: resolvePath(`../../server/${NODE_ENV}`),
+      path: resolvePath(`../../webserver/${NODE_ENV}`),
     },
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({
