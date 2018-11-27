@@ -4,13 +4,13 @@ import { StaticRouter } from 'react-router-dom';
 import { preloadAll } from 'react-loadable';
 import Html from 'server/html';
 import { Provider } from 'react-redux';
-import configureStore from 'universal/services';
+import configureStore from 'application/services';
 import { ServerStyleSheet } from 'styled-components';
 //import fetchDataForRender from '../helpers/fetchDataForRender';
-import RouteOptions from 'universal/web/routes';
+import RouteOptions from 'application/web/routes';
 import { renderRoutes } from 'react-router-config';
 import matchRoutes from 'react-router-config/matchRoutes';
-import { convertCustomRouteConfig } from 'universal/utils/convertcustomRouteConfig';
+import { convertCustomRouteConfig } from 'application/utils/convertcustomRouteConfig';
 import waitAll from '../helpers/waitAll';
 
 const routeConfig = convertCustomRouteConfig(RouteOptions);

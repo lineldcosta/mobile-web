@@ -1,6 +1,6 @@
-import IndexPage from 'universal/web/screen/index-page';
-import NotFoundIndex from 'universal/web/screen/not-found-page';
-import NotFoundRoutes from 'universal/web/screen/not-found-page/routes';
+import IndexPage from 'application/web/scenes/index-page';
+import NotFoundIndex from 'application/web/scenes/not-found-page';
+import NotFoundRoutes from 'application/web/scenes/not-found-page/routes';
 import Layout from './layout';
 
 export default [

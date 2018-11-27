@@ -1,15 +1,21 @@
 /* eslint "react/prop-types": 0*/
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Loadable from 'react-loadable';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { getPageTitle } from './../../../services/page/actionSaga';
 import { getPageTitleAction } from './../../../services/page/actionCreator';
 
-class NotFound extends Component {
-  
-  static preLoad = () => [[getPageTitle, 'Not Found Page']];
+import Loadable from 'react-loadable';
+import LoadingPage from 'application/web/scenes/loading-page';
+
+const Title = Loadable({
+  loader: () => import('./title'),
+  loading: LoadingPage,
+});
+
+class NotFoundError extends Component {
+  static preLoad = () => [[getPageTitle, 'Not Found Page error']];
 
   constructor(props) {
     super(props);
@@ -25,8 +31,11 @@ class NotFound extends Component {
         <Helmet>
           <title>{this.props.page_title}</title>
         </Helmet>
-        <Link to="/not-found/1" href="Home Page">
-          <p>Go to Not found error page</p>
+
+        <h1>Not found error page</h1>
+        <Title />
+        <Link to="/not-found" href="Home Page">
+          <p>Go to Not found page</p>
         </Link>
       </section>
     );
@@ -38,4 +47,4 @@ function mapStateToProps(state) {
     page_title: state.Page.pageTitle,
   };
 }
-export default connect(mapStateToProps)(NotFound);
+export default connect(mapStateToProps)(NotFoundError);

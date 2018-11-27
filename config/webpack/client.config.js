@@ -8,7 +8,6 @@ const autoprefixer = require('autoprefixer');
 const flexbugsfix = require('postcss-flexbugs-fixes');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 
-
 const resolvePath = (pathname) => path.resolve(__dirname, pathname);
 
 module.exports = (env) => {
@@ -142,7 +141,7 @@ module.exports = (env) => {
     resolve: {
       modules: [resolvePath('../../src'), 'node_modules'],
       alias: {
-        universal: resolvePath('../../src/universal/'),
+        application: resolvePath('../../src/application/'),
       },
     },
     mode: NODE_ENV,

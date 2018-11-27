@@ -1,5 +1,4 @@
-
-export function convertCustomRouteConfig(customRouteConfig, parentRoute = "") {
+export function convertCustomRouteConfig(customRouteConfig, parentRoute = '') {
   return customRouteConfig.map((route) => {
     if (typeof route.path === 'function') {
       const pathResult = route.path(parentRoute || '').replace('//', '/');

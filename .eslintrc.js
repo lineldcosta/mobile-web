@@ -2,7 +2,10 @@ const path = require('path');
 const config = require('./config/webpack/client.config');
 
 module.exports = {
-  extends: [require.resolve('@viralganatra/app-scripts/configs/eslint'), "eslint:recommended"],
+  extends: [
+    require.resolve('@viralganatra/app-scripts/configs/eslint'),
+    'eslint:recommended',
+  ],
   rules: {
     'import/no-dynamic-require': ['off'],
   },

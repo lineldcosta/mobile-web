@@ -16,7 +16,7 @@ export function* getPageTitleFlow() {
 }
 
 export function* getPageTitle(title) {
-  console.log("calling here")
+  console.log('calling here');
   const page_title = yield select(selectors.getPageTitle);
   if (!page_title) {
     yield put({ type: PAGE_TITLE, payload: title });

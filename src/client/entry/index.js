@@ -6,10 +6,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { preloadReady } from 'react-loadable';
 //import { hot } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import configureStore from 'universal/services';
+import configureStore from 'application/services';
 import { renderRoutes } from 'react-router-config';
-import RouteOptions from 'universal/web/routes';
-import { convertCustomRouteConfig } from 'universal/utils/convertcustomRouteConfig';
+import RouteOptions from 'application/web/routes';
+import { convertCustomRouteConfig } from 'application/utils/convertcustomRouteConfig';
 
 const routeConfig = convertCustomRouteConfig(RouteOptions);
 
@@ -64,7 +64,7 @@ export const clientSideRender = async (
 
     if (module.hot) {
       module.hot.accept(() => {
-        const RouteOptions = require('universal/web/routes');
+        const RouteOptions = require('application/web/routes');
         const routeConfig = convertCustomRouteConfig(RouteOptions);
         const nextAppRoutes = (routeConfig.default || routeConfig);
         renderApp(nextAppRoutes);

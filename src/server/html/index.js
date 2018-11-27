@@ -75,7 +75,7 @@ const Html = ({ children, clientStats, reactLoadableStats, initialState }) => {
     );
   } catch (error) {
     // es-lint-desable no-console
-    console.log("error", error);
+    console.log('error', error);
     return null;
   }
 };

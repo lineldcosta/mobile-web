@@ -1,6 +1,6 @@
 import url from 'url';
 import { matchPath } from 'react-router-dom';
-import Routes from 'universal/routes';
+import Routes from 'application/routes';
 
 //implement debounce to avoid more delay in ssr
 const fetchDataForRender = (req, store) => {
