@@ -96,6 +96,12 @@ module.exports = (env) => {
     ],
     resolve: {
       modules: [resolvePath('../../src'), 'node_modules'],
+      alias: {
+        application: resolvePath('../../src/application/'),
+        services: resolvePath('../../src/application/services/'),
+        shared: resolvePath('../../src/application/shared/'),
+        utils: resolvePath('../../src/application/utils/'),
+      },
     },
     mode: NODE_ENV,
     target: 'node',

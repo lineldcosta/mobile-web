@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "es2017",
+      "allowSyntheticDefaultImports": false,
+      "baseUrl": "./",
+      "paths": {
+        "application/*": ["src/application/*"],
+        "services/*": ["src/application/services/*"],
+        "Shared/*": ["src/application/shared/*"],
+        "utils/*": ["src/application/utils/*"]
+      }
+    },
+    "exclude": ["node_modules", "webclient", "webnative"]
+  }
