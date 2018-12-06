@@ -6,7 +6,7 @@
       "paths": {
         "application/*": ["src/application/*"],
         "services/*": ["src/application/services/*"],
-        "Shared/*": ["src/application/shared/*"],
+        "shared/*": ["src/application/shared/*"],
         "utils/*": ["src/application/utils/*"]
       }
     },
