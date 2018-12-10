@@ -20,7 +20,7 @@ module.exports = (env) => {
     devtool: env.dev ? 'eval' : 'source-map',
     entry: {
       main: [
-        'babel-polyfill',
+        '@babel/polyfill',
         ...ifDev(
           'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=false&quiet=false&noInfo=false',
         ),
@@ -39,7 +39,7 @@ module.exports = (env) => {
               cacheDirectory: true,
               presets: [
                 [
-                  'env',
+                  '@babel/preset-env',
                   {
                     modules: false,
                     targets: {
@@ -48,10 +48,14 @@ module.exports = (env) => {
                     debug: env.dev,
                   },
                 ],
-                'react',
-                'stage-0',
+                '@babel/preset-react',
               ],
-              plugins: ['react-loadable/babel', ...ifDev('react-hot-loader/babel')],
+              plugins: [
+                'react-loadable/babel',
+                ...ifDev('react-hot-loader/babel'),
+                '@babel/plugin-proposal-class-properties',
+                '@babel/plugin-syntax-dynamic-import',
+              ],
             },
           },
         },

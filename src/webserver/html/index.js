@@ -67,8 +67,10 @@ const Html = ({ children, clientStats, reactLoadableStats, initialState }) => {
             }}
           />
           <script src={`/dist/${runtimeFile}`} />
-          <script src={`/dist/${vendorFile}`} />
-          {scripts.map(({ file }) => <script key={file} src={`/dist/${file}`} />)}
+          {vendorFile ? <script src={`/dist/${vendorFile}`} /> : null}
+          {scripts.map(({ file }) => (
+            <script key={file} src={`/dist/${file}`} />
+          ))}
           <script src={`/dist/${mainFile}`} />
         </body>
       </html>

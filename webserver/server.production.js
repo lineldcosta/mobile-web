@@ -29,6 +29,30 @@ server.use(shrinkRay());
 server.disable('x-powered-by');
 
 server.use('/dist', express.static(clientOutputPath));
+server.use('/system', (req, res) => {
+  const processMem = process.memoryUsage();
+  const stats = {
+    memory: {
+      system: {
+        free: toMb(os.freemem()),
+        total: toMb(os.totalmem()),
+      },
+      process: {
+        rss: toMb(processMem.rss),
+        heapTotal: toMb(processMem.heapTotal),
+        heapUsed: toMb(processMem.heapUsed),
+      },
+    },
+    loadavg: os.loadavg(),
+    cpuCount: os.cpus().length,
+    uptime: {
+      system: Math.floor(os.uptime()),
+      process: Math.floor(process.uptime()),
+    },
+  };
+  res.json(stats);
+});
+
 const cpuCount = require('os').cpus().length;
 
 if (cluster.isMaster) {

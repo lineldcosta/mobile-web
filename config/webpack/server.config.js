@@ -21,10 +21,15 @@ module.exports = (env) => {
           exclude: /node_modules/,
           loader: 'babel-loader',
           options: {
-            plugins: ['react-loadable/babel', ...ifDev('react-hot-loader/babel')],
+            plugins: [
+              'react-loadable/babel',
+              ...ifDev('react-hot-loader/babel'),
+              '@babel/plugin-proposal-class-properties',
+              '@babel/plugin-syntax-dynamic-import',
+            ],
             presets: [
               [
-                'env',
+                '@babel/preset-env',
                 {
                   modules: false,
                   targets: {
@@ -32,8 +37,7 @@ module.exports = (env) => {
                   },
                 },
               ],
-              'react',
-              'stage-0',
+              '@babel/preset-react',
             ],
           },
         },
