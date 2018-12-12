@@ -58,7 +58,10 @@ const serverSideRender = (stats) => async (req, res) => {
 
     res.write('<!doctype html>');
 
-    stream.pipe(res, { end: false });
+    stream.pipe(
+      res,
+      { end: false },
+    );
     stream.on('end', () => {
       return res.send();
     });
